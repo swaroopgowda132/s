@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feedback Form</title>
+  <style>
+    :root {
+      --primary-color: #2a9d8f;
+      --background-color: #f4f4f4;
+      --form-bg: #ffffff;
+      --text-color: #333;
+      --border-radius: 8px;
+      --transition-speed: 0.3s;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .form-wrapper {
+      max-width: 600px;
+      margin: auto;
+      background: var(--form-bg);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: orange;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: var(--border-radius);
+      transition: border var(--transition-speed);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary-color);
+      outline: none;
+    }
+
+    button {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 14px;
+      width: 100%;
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color var(--transition-speed);
+    }
+
+    button:hover {
+      background-color: #21867a;
+    }
+
+    .success-message {
+      text-align: center;
+      color: green;
+      display: none;
+    }
+    
+
+    @media (max-width: 600px) {
+      .form-wrapper {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-wrapper">
+  <h1>Hotel MDB BALMATTA</h>
+    
+    <h2>We Value Your Feedback</h2>
+    
+    <!-- ✅ Formspree form starts here -->
+    <form action="https://formspree.io/f/xqabrabo" method="POST">
+      <label for="rating">Rating</label>
+      <select id="rating" name="rating" required>
+        <option value="" disabled selected>Select your rating</option>
+        <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+        <option value="4">⭐⭐⭐⭐ Very Good</option>
+        <option value="3">⭐⭐⭐ Good</option>
+        <option value="2">⭐⭐ Fair</option>
+        <option value="1">⭐ Poor</option>
+      </select>
+
+      <label for="comments">Your Comments</label>
+      <textarea id="comments" name="comments" placeholder="Tell us what you think..." required></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+    <!-- ✅ Formspree form ends here -->
+    
+  </div>
+
+</body>
+</html>
